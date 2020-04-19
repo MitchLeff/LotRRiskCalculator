@@ -6,12 +6,12 @@ PRINT_COMBATS = False			#Flag to display each combat result
 
 #Parameters for number of attackers and defenders
 ATTACKING_DICE = 3				#Number of dice attacking (1-3)
-DEFENDING_DICE = 1				#Number of dice defending (1-2)
+DEFENDING_DICE = 2				#Number of dice defending (1-2)
 
 #Parameters for bonuses
-ATTACKER_HAS_GENERAL = True
-DEFENDER_HAS_GENERAL = True
-DEFENDER_HAS_STRONGHOLD = True
+ATTACKER_HAS_Leader = False
+DEFENDER_HAS_Leader = False
+DEFENDER_HAS_STRONGHOLD = False
 
 
 #Function to roll 1 six sided die
@@ -68,9 +68,9 @@ def combat(attacker, defender):
 #Class to represent the attacking player
 class Attacker:
 	#Initialize the attacker
-	def __init__(self, hasGeneral, numDice):
+	def __init__(self, hasLeader, numDice):
 		self.rolls = []
-		self.hasGeneral = hasGeneral			#Denotes if the attacker has a General while attacking
+		self.hasLeader = hasLeader			#Denotes if the attacker has a Leader while attacking
 		self.numDice = numDice					#Number of dice the attacker is using
 	
 	def rollAttacks(self):
@@ -83,16 +83,16 @@ class Attacker:
 		
 		self.rolls.sort()						#Sort in ascending order
 		
-		if self.hasGeneral:						#If the attacker has a General, add 1 to the highest die
+		if self.hasLeader:						#If the attacker has a Leader, add 1 to the highest die
 			self.rolls[-1] = self.rolls[-1] + 1	
 		
 		return self.rolls						#Return the resulting values
 
 #Class to represent the defending player
 class Defender:
-	def __init__(self, hasGeneral, hasStronghold, numDice):
+	def __init__(self, hasLeader, hasStronghold, numDice):
 		self.rolls = []
-		self.hasGeneral = hasGeneral			#Denotes if the defender has a General while defending
+		self.hasLeader = hasLeader			#Denotes if the defender has a Leader while defending
 		self.hasStronghold = hasStronghold		#Denotes if the defender has a Stronghold while defending
 		self.numDice = numDice					#Number of dice defender is using
 
@@ -103,7 +103,7 @@ class Defender:
 		
 		self.rolls.sort()						#Sort in ascending order
 		
-		if self.hasGeneral:						#If the defender has a General, add 1 to the highest die
+		if self.hasLeader:						#If the defender has a Leader, add 1 to the highest die
 			self.rolls[-1] = self.rolls[-1] + 1
 		
 		if self.hasStronghold:					#If the defender has a Stronghold, add 1 to the highest die
@@ -112,8 +112,8 @@ class Defender:
 		return self.rolls						#Return the resulting values
 
 #Create attacker and defender objects
-myAttacker = Attacker(ATTACKER_HAS_GENERAL, ATTACKING_DICE)
-myDefender = Defender(DEFENDER_HAS_GENERAL, DEFENDER_HAS_STRONGHOLD, DEFENDING_DICE)
+myAttacker = Attacker(ATTACKER_HAS_Leader, ATTACKING_DICE)
+myDefender = Defender(DEFENDER_HAS_Leader, DEFENDER_HAS_STRONGHOLD, DEFENDING_DICE)
 
 #Initialize results counters
 attacker_wins_count = 0
