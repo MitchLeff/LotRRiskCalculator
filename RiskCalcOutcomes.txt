@@ -1,9 +1,11 @@
+3-2 Possibilities
+
 ATTACKER_HAS_GENERAL = False
 DEFENDER_HAS_GENERAL = False
 DEFENDER_HAS_STRONGHOLD = False
 
-Attacker_2_0_count: 37199, 37.199%
-Defender_2_0_count: 29328, 29.328%
+Attacker_wins_count: 37199, 37.199%
+Defender_wins_count: 29328, 29.328%
 One_and_One_count: 33473, 33.473%
 
 
@@ -11,8 +13,8 @@ ATTACKER_HAS_GENERAL = True
 DEFENDER_HAS_GENERAL = False
 DEFENDER_HAS_STRONGHOLD = False
 
-Attacker_2_0_count: 51166, 51.166%
-Defender_2_0_count: 18375, 18.375%
+Attacker_wins_count: 51166, 51.166%
+Defender_wins_count: 18375, 18.375%
 One_and_One_count: 30459, 30.459%
 
 
@@ -20,8 +22,8 @@ ATTACKER_HAS_GENERAL = False
 DEFENDER_HAS_GENERAL = True
 DEFENDER_HAS_STRONGHOLD = False
 
-Attacker_2_0_count: 23972, 23.972%
-Defender_2_0_count: 35508, 35.508%
+Attacker_wins_count: 23972, 23.972%
+Defender_wins_count: 35508, 35.508%
 One_and_One_count: 40520, 40.52%
 
 
@@ -29,8 +31,8 @@ ATTACKER_HAS_GENERAL = False
 DEFENDER_HAS_GENERAL = False
 DEFENDER_HAS_STRONGHOLD = True
 
-Attacker_2_0_count: 23904, 23.904%
-Defender_2_0_count: 35392, 35.392%
+Attacker_wins_count: 23904, 23.904%
+Defender_wins_count: 35392, 35.392%
 One_and_One_count: 40704, 40.704%
 
 
@@ -38,8 +40,8 @@ ATTACKER_HAS_GENERAL = True
 DEFENDER_HAS_GENERAL = True
 DEFENDER_HAS_STRONGHOLD = False
 
-Attacker_2_0_count: 37227, 37.227%
-Defender_2_0_count: 29291, 29.291%
+Attacker_wins_count: 37227, 37.227%
+Defender_wins_count: 29291, 29.291%
 One_and_One_count: 33482, 33.482%
 
 
@@ -47,8 +49,8 @@ ATTACKER_HAS_GENERAL = True
 DEFENDER_HAS_GENERAL = False
 DEFENDER_HAS_STRONGHOLD = True
 
-Attacker_2_0_count: 37202, 37.202%
-Defender_2_0_count: 29412, 29.412%
+Attacker_wins_count: 37202, 37.202%
+Defender_wins_count: 29412, 29.412%
 One_and_One_count: 33386, 33.386%
 
 
@@ -56,8 +58,8 @@ ATTACKER_HAS_GENERAL = False
 DEFENDER_HAS_GENERAL = True
 DEFENDER_HAS_STRONGHOLD = True
 
-Attacker_2_0_count: 12787, 12.787%
-Defender_2_0_count: 37985, 37.985%
+Attacker_wins_count: 12787, 12.787%
+Defender_wins_count: 37985, 37.985%
 One_and_One_count: 49228, 49.228%
 
 
@@ -65,6 +67,81 @@ ATTACKER_HAS_GENERAL = True
 DEFENDER_HAS_GENERAL = True
 DEFENDER_HAS_STRONGHOLD = True
 
-Attacker_2_0_count: 24048, 24.048%
-Defender_2_0_count: 35313, 35.313%
+Attacker_wins_count: 24048, 24.048%
+Defender_wins_count: 35313, 35.313%
 One_and_One_count: 40639, 40.639%
+
+
+
+3-1 Possibilities
+
+ATTACKER_HAS_GENERAL = False
+DEFENDER_HAS_GENERAL = False
+DEFENDER_HAS_STRONGHOLD = False
+
+Attacker_wins_count: 65825, 65.825%
+Defender_wins_count: 34175, 34.175%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = True
+DEFENDER_HAS_GENERAL = False
+DEFENDER_HAS_STRONGHOLD = False
+
+Attacker_wins_count: 82623, 82.623%
+Defender_wins_count: 17377, 17.377%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = False
+DEFENDER_HAS_GENERAL = True
+DEFENDER_HAS_STRONGHOLD = False
+
+Attacker_wins_count: 49344, 49.344%
+Defender_wins_count: 50656, 50.656%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = False
+DEFENDER_HAS_GENERAL = False
+DEFENDER_HAS_STRONGHOLD = True
+
+Attacker_wins_count: 49511, 49.511%
+Defender_wins_count: 50489, 50.489%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = True
+DEFENDER_HAS_GENERAL = True
+DEFENDER_HAS_STRONGHOLD = False
+
+Attacker_wins_count: 65755, 65.755%
+Defender_wins_count: 34245, 34.245%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = True
+DEFENDER_HAS_GENERAL = False
+DEFENDER_HAS_STRONGHOLD = True
+
+Attacker_wins_count: 65909, 65.909%
+Defender_wins_count: 34091, 34.091%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = False
+DEFENDER_HAS_GENERAL = True
+DEFENDER_HAS_STRONGHOLD = True
+
+Attacker_wins_count: 33097, 33.097%
+Defender_wins_count: 66903, 66.903%
+One_and_One_count: 0, 0.0%
+
+
+ATTACKER_HAS_GENERAL = True
+DEFENDER_HAS_GENERAL = True
+DEFENDER_HAS_STRONGHOLD = True
+
+Attacker_wins_count: 49466, 49.466%
+Defender_wins_count: 50534, 50.534%
+One_and_One_count: 0, 0.0%

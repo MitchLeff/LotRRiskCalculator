@@ -1,11 +1,17 @@
 import random
 
-RUNS = 1000000
-PRINT_COMBATS = False
+#Parameters for simulator
+RUNS = 100000					#Number of simulated combats to be performed
+PRINT_COMBATS = False			#Flag to display each combat result
 
-ATTACKER_HAS_GENERAL = False
-DEFENDER_HAS_GENERAL = False
-DEFENDER_HAS_STRONGHOLD = False
+#Parameters for number of attackers and defenders
+ATTACKING_DICE = 3				#Number of dice attacking (1-3)
+DEFENDING_DICE = 1				#Number of dice defending (1-2)
+
+#Parameters for bonuses
+ATTACKER_HAS_GENERAL = True
+DEFENDER_HAS_GENERAL = True
+DEFENDER_HAS_STRONGHOLD = True
 
 
 #Function to roll 1 six sided die
@@ -37,16 +43,23 @@ def combat(attacker, defender):
 	else: 
 		defenderWins += 1
 	
-	#Determine low dice outcome
-	if a2 > d2:
-		attackerWins += 1
-	else:
-		defenderWins += 1
+	if attacker.numDice > 1 and defender.numDice > 1:	#Only determine low dice outcome if both players are using more than 1 dice
+		#Determine low dice outcome
+		if a2 > d2:
+			attackerWins += 1
+		else:
+			defenderWins += 1
 
 	#Print combat outcome
 	if PRINT_COMBATS:
-		print("Attacker: " + str(a1) + ", " + str(a2))
-		print("Defender: " + str(d1) + ", " + str(d2))
+		if attacker.numDice > 1: 
+			print("Attacker: " + str(a1) + ", " + str(a2))
+		else:
+			print("Attacker: " + str(a1))
+		if defender.numDice > 1:
+			print("Defender: " + str(d1) + ", " + str(d2))
+		else:
+			print("Defender: " + str(d1))
 		print("Outcome: " + str(attackerWins) + " - " + str(defenderWins) + "\n")
 	
 	#Return combat outcome
@@ -55,71 +68,74 @@ def combat(attacker, defender):
 #Class to represent the attacking player
 class Attacker:
 	#Initialize the attacker
-	def __init__(self, hasGeneral):
+	def __init__(self, hasGeneral, numDice):
 		self.rolls = []
 		self.hasGeneral = hasGeneral			#Denotes if the attacker has a General while attacking
+		self.numDice = numDice					#Number of dice the attacker is using
 	
 	def rollAttacks(self):
 		self.rolls = []							#Reset rolls to empty
-		for i in range(0,3):
-			self.rolls.append(rollD6())			#Roll 3d6
+		for i in range(0,self.numDice):
+			self.rolls.append(rollD6())			#Roll a dice per number of dice chosen to defend
 		
-		self.rolls.remove(min(self.rolls))		#Keep the highest 2 results (remove the lowest result)
+		if self.numDice > 2:					#Keep the highest results up to the number of dice being rolled (remove the lowest result if more than 2 dice)
+			self.rolls.remove(min(self.rolls))	
 		
 		self.rolls.sort()						#Sort in ascending order
 		
 		if self.hasGeneral:						#If the attacker has a General, add 1 to the highest die
-			self.rolls[1] = self.rolls[1] + 1	
+			self.rolls[-1] = self.rolls[-1] + 1	
 		
 		return self.rolls						#Return the resulting values
 
 #Class to represent the defending player
 class Defender:
-	def __init__(self, hasGeneral, hasStronghold):
+	def __init__(self, hasGeneral, hasStronghold, numDice):
 		self.rolls = []
 		self.hasGeneral = hasGeneral			#Denotes if the defender has a General while defending
 		self.hasStronghold = hasStronghold		#Denotes if the defender has a Stronghold while defending
+		self.numDice = numDice					#Number of dice defender is using
 
 	def rollDefense(self):
 		self.rolls = []							#Reset rolls to empty
-		for i in range(0,2):
-			self.rolls.append(rollD6())			#Roll 2d6
+		for i in range(0,self.numDice):
+			self.rolls.append(rollD6())			#Roll a dice per number of dice chosen to defend
 		
 		self.rolls.sort()						#Sort in ascending order
 		
 		if self.hasGeneral:						#If the defender has a General, add 1 to the highest die
-			self.rolls[1] = self.rolls[1] + 1
+			self.rolls[-1] = self.rolls[-1] + 1
 		
 		if self.hasStronghold:					#If the defender has a Stronghold, add 1 to the highest die
-			self.rolls[1] = self.rolls[1] + 1
+			self.rolls[-1] = self.rolls[-1] + 1
 			
 		return self.rolls						#Return the resulting values
 
 #Create attacker and defender objects
-myAttacker = Attacker(ATTACKER_HAS_GENERAL)
-myDefender = Defender(DEFENDER_HAS_GENERAL, DEFENDER_HAS_STRONGHOLD)
+myAttacker = Attacker(ATTACKER_HAS_GENERAL, ATTACKING_DICE)
+myDefender = Defender(DEFENDER_HAS_GENERAL, DEFENDER_HAS_STRONGHOLD, DEFENDING_DICE)
 
 #Initialize results counters
-attacker_2_0_count = 0
+attacker_wins_count = 0
+defender_wins_count = 0
 one_and_one_count = 0
-defender_2_0_count = 0
 
 #Perform number of simulated combats and count each outcome
 for i in range(0,RUNS):
 	outcome = combat(myAttacker, myDefender)
 	if outcome[0] > outcome[1]:
-		attacker_2_0_count += 1
+		attacker_wins_count += 1
 	elif outcome[0] < outcome[1]:
-		defender_2_0_count += 1
+		defender_wins_count += 1
 	else:
 		one_and_one_count += 1
 
 #Convert results to a percentage
-attacker_2_0_percentage = float(attacker_2_0_count) / RUNS
-defender_2_0_percentage = float(defender_2_0_count) / RUNS
+attacker_win_percentage = float(attacker_wins_count) / RUNS
+defender_win_percentage = float(defender_wins_count) / RUNS
 one_and_one_percentage = float(one_and_one_count) / RUNS
 		
 #Print the results
-print("Attacker_2_0_count: " + str(attacker_2_0_count) + ", " + str(attacker_2_0_percentage * 100) + "%")
-print("Defender_2_0_count: " + str(defender_2_0_count) + ", " + str(defender_2_0_percentage * 100) + "%")
+print("Attacker_wins_count: " + str(attacker_wins_count) + ", " + str(attacker_win_percentage * 100) + "%")
+print("Defender_wins_count: " + str(defender_wins_count) + ", " + str(defender_win_percentage * 100) + "%")
 print("One_and_One_count: " + str(one_and_one_count) + ", " + str(one_and_one_percentage * 100) + "%")
