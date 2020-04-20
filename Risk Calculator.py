@@ -1,3 +1,6 @@
+#"It's actually pretty simple, do you have a whiteboard?" -My Incorrect Friend
+
+
 import random
 
 #Parameters for simulator
