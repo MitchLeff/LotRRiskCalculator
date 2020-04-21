@@ -101,7 +101,7 @@ class Attacker:
 class Defender:
 	def __init__(self, hasLeader, hasStronghold, numDice):
 		self.rolls = []
-		self.hasLeader = hasLeader			#Denotes if the defender has a Leader while defending
+		self.hasLeader = hasLeader				#Denotes if the defender has a Leader while defending
 		self.hasStronghold = hasStronghold		#Denotes if the defender has a Stronghold while defending
 		self.numDice = numDice					#Number of dice defender is using
 
