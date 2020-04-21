@@ -1,147 +1,272 @@
-3-2 Possibilities
+Attacker has Leader:		True
+Defender has Leader:		True
+Defender has Stronghold:	True
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = False
+1 - 1
+Attacker Wins:	27.8014%
+Defender Wins:	72.1986%
+One and One:	0.0%
 
-Attacker_wins_count: 37199, 37.199%
-Defender_wins_count: 29328, 29.328%
-One_and_One_count: 33473, 33.473%
+1 - 2
+Attacker Wins:	13.9002%
+Defender Wins:	86.0998%
+One and One:	0.0%
 
+2 - 1
+Attacker Wins:	41.6265%
+Defender Wins:	58.3735%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = False
+2 - 2
+Attacker Wins:	14.6659%
+Defender Wins:	53.347%
+One and One:	31.9871%
 
-Attacker_wins_count: 51166, 51.166%
-Defender_wins_count: 18375, 18.375%
-One_and_One_count: 30459, 30.459%
+3 - 1
+Attacker Wins:	49.5194%
+Defender Wins:	50.4806%
+One and One:	0.0%
 
+3 - 2
+Attacker Wins:	23.9251%
+Defender Wins:	35.2204%
+One and One:	40.8545%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = False
+Attacker has Leader:		True
+Defender has Leader:		True
+Defender has Stronghold:	False
 
-Attacker_wins_count: 23972, 23.972%
-Defender_wins_count: 35508, 35.508%
-One_and_One_count: 40520, 40.52%
+1 - 1
+Attacker Wins:	41.6296%
+Defender Wins:	58.3704%
+One and One:	0.0%
 
+1 - 2
+Attacker Wins:	25.5129%
+Defender Wins:	74.4871%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = True
+2 - 1
+Attacker Wins:	57.9258%
+Defender Wins:	42.0742%
+One and One:	0.0%
 
-Attacker_wins_count: 23904, 23.904%
-Defender_wins_count: 35392, 35.392%
-One_and_One_count: 40704, 40.704%
+2 - 2
+Attacker Wins:	22.8235%
+Defender Wins:	44.8076%
+One and One:	32.3689%
 
+3 - 1
+Attacker Wins:	65.9861%
+Defender Wins:	34.0139%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = False
+3 - 2
+Attacker Wins:	37.1833%
+Defender Wins:	29.2546%
+One and One:	33.5621%
 
-Attacker_wins_count: 37227, 37.227%
-Defender_wins_count: 29291, 29.291%
-One_and_One_count: 33482, 33.482%
+Attacker has Leader:		True
+Defender has Leader:		False
+Defender has Stronghold:	True
 
+1 - 1
+Attacker Wins:	41.6419%
+Defender Wins:	58.3581%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = True
+1 - 2
+Attacker Wins:	25.5208%
+Defender Wins:	74.4792%
+One and One:	0.0%
 
-Attacker_wins_count: 37202, 37.202%
-Defender_wins_count: 29412, 29.412%
-One_and_One_count: 33386, 33.386%
+2 - 1
+Attacker Wins:	57.8533%
+Defender Wins:	42.1467%
+One and One:	0.0%
 
+2 - 2
+Attacker Wins:	22.8618%
+Defender Wins:	44.8377%
+One and One:	32.3005%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = True
+3 - 1
+Attacker Wins:	65.933%
+Defender Wins:	34.067%
+One and One:	0.0%
 
-Attacker_wins_count: 12787, 12.787%
-Defender_wins_count: 37985, 37.985%
-One_and_One_count: 49228, 49.228%
+3 - 2
+Attacker Wins:	37.1755%
+Defender Wins:	29.3126%
+One and One:	33.5119%
 
+Attacker has Leader:		True
+Defender has Leader:		False
+Defender has Stronghold:	False
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = True
+1 - 1
+Attacker Wins:	58.3342%
+Defender Wins:	41.6658%
+One and One:	0.0%
 
-Attacker_wins_count: 24048, 24.048%
-Defender_wins_count: 35313, 35.313%
-One_and_One_count: 40639, 40.639%
+1 - 2
+Attacker Wins:	42.0909%
+Defender Wins:	57.9091%
+One and One:	0.0%
 
+2 - 1
+Attacker Wins:	74.585%
+Defender Wins:	25.415%
+One and One:	0.0%
 
+2 - 2
+Attacker Wins:	31.2691%
+Defender Wins:	31.2117%
+One and One:	37.5192%
 
-3-1 Possibilities
+3 - 1
+Attacker Wins:	82.6246%
+Defender Wins:	17.3754%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = False
+3 - 2
+Attacker Wins:	51.1048%
+Defender Wins:	18.303%
+One and One:	30.5922%
 
-Attacker_wins_count: 65825, 65.825%
-Defender_wins_count: 34175, 34.175%
-One_and_One_count: 0, 0.0%
+Attacker has Leader:		False
+Defender has Leader:		True
+Defender has Stronghold:	True
 
+1 - 1
+Attacker Wins:	16.7009%
+Defender Wins:	83.2991%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = False
+1 - 2
+Attacker Wins:	6.4631%
+Defender Wins:	93.5369%
+One and One:	0.0%
 
-Attacker_wins_count: 82623, 82.623%
-Defender_wins_count: 17377, 17.377%
-One_and_One_count: 0, 0.0%
+2 - 1
+Attacker Wins:	26.8678%
+Defender Wins:	73.1322%
+One and One:	0.0%
 
+2 - 2
+Attacker Wins:	7.8848%
+Defender Wins:	57.9099%
+One and One:	34.2053%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = False
+3 - 1
+Attacker Wins:	33.3401%
+Defender Wins:	66.6599%
+One and One:	0.0%
 
-Attacker_wins_count: 49344, 49.344%
-Defender_wins_count: 50656, 50.656%
-One_and_One_count: 0, 0.0%
+3 - 2
+Attacker Wins:	12.8421%
+Defender Wins:	37.9428%
+One and One:	49.2151%
 
+Attacker has Leader:		False
+Defender has Leader:		True
+Defender has Stronghold:	False
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = True
+1 - 1
+Attacker Wins:	27.7627%
+Defender Wins:	72.2373%
+One and One:	0.0%
 
-Attacker_wins_count: 49511, 49.511%
-Defender_wins_count: 50489, 50.489%
-One_and_One_count: 0, 0.0%
+1 - 2
+Attacker Wins:	13.8623%
+Defender Wins:	86.1377%
+One and One:	0.0%
 
+2 - 1
+Attacker Wins:	41.6528%
+Defender Wins:	58.3472%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = False
+2 - 2
+Attacker Wins:	14.6604%
+Defender Wins:	53.3345%
+One and One:	32.0051%
 
-Attacker_wins_count: 65755, 65.755%
-Defender_wins_count: 34245, 34.245%
-One_and_One_count: 0, 0.0%
+3 - 1
+Attacker Wins:	49.3379%
+Defender Wins:	50.6621%
+One and One:	0.0%
 
+3 - 2
+Attacker Wins:	23.9452%
+Defender Wins:	35.2448%
+One and One:	40.81%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = False
-DEFENDER_HAS_STRONGHOLD = True
+Attacker has Leader:		False
+Defender has Leader:		False
+Defender has Stronghold:	True
 
-Attacker_wins_count: 65909, 65.909%
-Defender_wins_count: 34091, 34.091%
-One_and_One_count: 0, 0.0%
+1 - 1
+Attacker Wins:	27.7214%
+Defender Wins:	72.2786%
+One and One:	0.0%
 
+1 - 2
+Attacker Wins:	13.8517%
+Defender Wins:	86.1483%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = False
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = True
+2 - 1
+Attacker Wins:	41.6398%
+Defender Wins:	58.3602%
+One and One:	0.0%
 
-Attacker_wins_count: 33097, 33.097%
-Defender_wins_count: 66903, 66.903%
-One_and_One_count: 0, 0.0%
+2 - 2
+Attacker Wins:	14.6737%
+Defender Wins:	53.3656%
+One and One:	31.9607%
 
+3 - 1
+Attacker Wins:	49.3273%
+Defender Wins:	50.6727%
+One and One:	0.0%
 
-ATTACKER_HAS_LEADER = True
-DEFENDER_HAS_LEADER = True
-DEFENDER_HAS_STRONGHOLD = True
+3 - 2
+Attacker Wins:	23.9263%
+Defender Wins:	35.2466%
+One and One:	40.8271%
 
-Attacker_wins_count: 49466, 49.466%
-Defender_wins_count: 50534, 50.534%
-One_and_One_count: 0, 0.0%
+Attacker has Leader:		False
+Defender has Leader:		False
+Defender has Stronghold:	False
+
+1 - 1
+Attacker Wins:	41.6583%
+Defender Wins:	58.3417%
+One and One:	0.0%
+
+1 - 2
+Attacker Wins:	25.4434%
+Defender Wins:	74.5566%
+One and One:	0.0%
+
+2 - 1
+Attacker Wins:	57.8857%
+Defender Wins:	42.1143%
+One and One:	0.0%
+
+2 - 2
+Attacker Wins:	22.778%
+Defender Wins:	44.87%
+One and One:	32.352%
+
+3 - 1
+Attacker Wins:	65.9033%
+Defender Wins:	34.0967%
+One and One:	0.0%
+
+3 - 2
+Attacker Wins:	37.1102%
+Defender Wins:	29.2221%
+One and One:	33.6677%
+

@@ -1,15 +1,21 @@
 #"It's actually pretty simple, do you have a whiteboard?" -My Incorrect Friend
 
-
 import random
 
 #Parameters for simulator
-RUNS = 100000					#Number of simulated combats to be performed
+RUNS = 1000000					#Number of simulated combats to be performed
 PRINT_COMBATS = False			#Flag to display each combat result
 
 #Parameters for number of attackers and defenders
-ATTACKING_DICE = 3				#Number of dice attacking (1-3)
-DEFENDING_DICE = 2				#Number of dice defending (1-2)
+ATTACKING_DICE = 2				#Number of dice attacking (1-3)
+DEFENDING_DICE = 1				#Number of dice defending (1-2)
+
+#Dice number options to iterate through
+Attacker_Dice_Options = [1,2,3]
+Defender_Dice_Options = [1,2]
+
+#Flags for traversing truth table options
+Flag_Options = [True, False]
 
 #Parameters for bonuses
 ATTACKER_HAS_Leader = False
@@ -73,7 +79,7 @@ class Attacker:
 	#Initialize the attacker
 	def __init__(self, hasLeader, numDice):
 		self.rolls = []
-		self.hasLeader = hasLeader			#Denotes if the attacker has a Leader while attacking
+		self.hasLeader = hasLeader				#Denotes if the attacker has a Leader while attacking
 		self.numDice = numDice					#Number of dice the attacker is using
 	
 	def rollAttacks(self):
@@ -114,31 +120,63 @@ class Defender:
 			
 		return self.rolls						#Return the resulting values
 
-#Create attacker and defender objects
-myAttacker = Attacker(ATTACKER_HAS_Leader, ATTACKING_DICE)
-myDefender = Defender(DEFENDER_HAS_Leader, DEFENDER_HAS_STRONGHOLD, DEFENDING_DICE)
 
-#Initialize results counters
-attacker_wins_count = 0
-defender_wins_count = 0
-one_and_one_count = 0
+def SimulateCombat(attacker, defender, runs):
+	# Initialize results counters
+	attacker_wins_count = 0
+	defender_wins_count = 0
+	one_and_one_count = 0
 
-#Perform number of simulated combats and count each outcome
-for i in range(0,RUNS):
-	outcome = combat(myAttacker, myDefender)
-	if outcome[0] > outcome[1]:
-		attacker_wins_count += 1
-	elif outcome[0] < outcome[1]:
-		defender_wins_count += 1
-	else:
-		one_and_one_count += 1
+	# Perform number of simulated combats and count each outcome
+	for i in range(0,runs):
+		outcome = combat(attacker, defender)
+		if outcome[0] > outcome[1]:
+			attacker_wins_count += 1
+		elif outcome[0] < outcome[1]:
+			defender_wins_count += 1
+		else:
+			one_and_one_count += 1
 
-#Convert results to a percentage
-attacker_win_percentage = float(attacker_wins_count) / RUNS
-defender_win_percentage = float(defender_wins_count) / RUNS
-one_and_one_percentage = float(one_and_one_count) / RUNS
-		
-#Print the results
-print("Attacker_wins_count: " + str(attacker_wins_count) + ", " + str(attacker_win_percentage * 100) + "%")
-print("Defender_wins_count: " + str(defender_wins_count) + ", " + str(defender_win_percentage * 100) + "%")
-print("One_and_One_count: " + str(one_and_one_count) + ", " + str(one_and_one_percentage * 100) + "%")
+	# Convert results to a percentage
+	attacker_win_percentage = 100 * float(attacker_wins_count) / runs
+	defender_win_percentage = 100 * float(defender_wins_count) / runs
+	one_and_one_percentage = 100 * float(one_and_one_count) / runs
+			
+	# Print the results
+	print("Attacker_wins_count: " + str(attacker_wins_count) + ", " + str(attacker_win_percentage) + "%")
+	print("Defender_wins_count: " + str(defender_wins_count) + ", " + str(defender_win_percentage) + "%")
+	print("One_and_One_count: " + str(one_and_one_count) + ", " + str(one_and_one_percentage) + "%\n")
+	
+	return [attacker_win_percentage, defender_win_percentage, one_and_one_percentage]
+
+# Create attacker and defender objects for combat (Single Instance)
+# myAttacker = Attacker(ATTACKER_HAS_Leader, ATTACKING_DICE)
+# myDefender = Defender(DEFENDER_HAS_Leader, DEFENDER_HAS_STRONGHOLD, DEFENDING_DICE)
+
+# SimulateCombat(myAttacker, myDefender, RUNS)
+
+
+# Main loop to traverse each possible arrangement of options
+with open("RiskCalcOutcomes.txt", 'w') as f:
+	for i in Flag_Options:				#Attacker has a Leader
+		for j in Flag_Options:			#Defender has a Leader
+			for k in Flag_Options:		#Defender has a Stronghold
+				#Write Flag options to file
+				f.writelines("Attacker has Leader:\t\t" + str(i) + "\n")
+				f.writelines("Defender has Leader:\t\t" + str(j) + "\n")
+				f.writelines("Defender has Stronghold:\t" + str(k) + "\n\n")
+	
+				for l in Attacker_Dice_Options:			#Attacking number of dice (1-3)
+					for m in Defender_Dice_Options:		#Defending number of dice (1-2)
+						#Create Attacker and Defender objects
+						myAttacker = Attacker(i, l)
+						myDefender = Defender(j, k, m)
+						
+						#Collect results from simulated combats
+						combat_results = SimulateCombat(myAttacker, myDefender, RUNS)
+						
+						#Write results to file
+						f.writelines(str(l) + " - " +str(m) + "\n")
+						f.writelines("Attacker Wins:\t" + str(combat_results[0]) + "%\n")
+						f.writelines("Defender Wins:\t" + str(combat_results[1]) + "%\n")
+						f.writelines("One and One:\t" + str(combat_results[2])+ "%\n\n")
